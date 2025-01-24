@@ -1,6 +1,5 @@
 <template>
   <button
-    ref="deleteNovaDraftButton"
     type="button"
     class="mr-3 btn btn-default btn-danger"
     v-if="isDraft"
@@ -20,13 +19,13 @@ export default {
   props: ['resource', 'resourceId', 'field', 'resourceName'],
 
   mounted() {
-    if (this.isDraft) {
-      const deleteButton = this.getDetailDeleteButton();
-      if (deleteButton) {
-        deleteButton.style.display = 'none';
-        deleteButton.parentNode.insertBefore(this.$refs.deleteNovaDraftButton, deleteButton);
-      }
-    }
+    // if (this.isDraft) {
+    //   const deleteButton = this.getDetailDeleteButton();
+    //   if (deleteButton) {
+    //     deleteButton.style.display = 'none';
+    //     deleteButton.parentNode.insertBefore(this.$refs.deleteNovaDraftButton, deleteButton);
+    //   }
+    // }
   },
 
   beforeMount() {

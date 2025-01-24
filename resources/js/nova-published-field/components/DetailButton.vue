@@ -1,10 +1,11 @@
 <template>
-  <panel-item :field="field">
+  <!-- <panel-item :field="field">
     <template slot="value">
       <publish-indicator :draft="isDraft" :published="field.value" />
       <publish-button :draftId="draftId" :resourceClass="field.class" ref="publishButton" v-if="!field.value" />
     </template>
-  </panel-item>
+  </panel-item> -->
+  <span>nova-published-field/DetailButton.vue</span>
 </template>
 
 <script>
@@ -28,10 +29,10 @@ export default {
   },
 
   mounted() {
-    if (!this.field.value) {
-      const editButtonEl = document.querySelector('.content').querySelector('[dusk="edit-resource-button"]');
-      editButtonEl.parentNode.append(this.$refs.publishButton.$el);
-    }
+    // if (!this.field.value) {
+    //   const editButtonEl = document.querySelector('.content').querySelector('[dusk="edit-resource-button"]');
+    //   editButtonEl.parentNode.append(this.$refs.publishButton.$el);
+    // }
   },
 };
 </script>
