@@ -4,10 +4,15 @@ import IndexNovaPublishedField from './nova-published-field/components/IndexFiel
 import DetailNovaPublishedField from './nova-published-field/components/DetailButton';
 import DetailNovaUnpublishButton from './nova-unpublish-button/Detail';
 import FormNovaUnpublishButton from './nova-unpublish-button/Form';
+import SimpleText from './nova-published-field/components/SimpleText';
 
 Nova.booting((Vue) => {
 
   console.log('Nova Draft Button Loaded...');
+
+  Vue.component('index-simple-text', SimpleText);
+  Vue.component('detail-simple-text', SimpleText);
+  Vue.component('form-simple-text', SimpleText);
 
   Vue.component('detail-nova-draft-button', DetailNovaDraftButton);
   Vue.component('form-nova-draft-button', FormNovaDraftButton);

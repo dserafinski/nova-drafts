@@ -1,4 +1,5 @@
 <template>
+
   <button
     v-if="field.isUnpublishable"
     ref="unpublishButton"
@@ -17,7 +18,12 @@ import UnpublishesModels from '../mixins/UnpublishesModels';
 
 export default {
   props: ['resource', 'resourceId', 'field', 'resourceName'],
-  mixins: [Deletable, InteractsWithResourceInformation, FindsNovaElements, UnpublishesModels],
+  mixins: [
+    Deletable,
+    InteractsWithResourceInformation,
+    FindsNovaElements,
+    UnpublishesModels
+  ],
 
   mounted() {
     if (this.field.isUnpublishable) {
