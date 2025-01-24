@@ -6,6 +6,9 @@ import DetailNovaUnpublishButton from './nova-unpublish-button/Detail';
 import FormNovaUnpublishButton from './nova-unpublish-button/Form';
 
 Nova.booting((Vue) => {
+
+  console.log('Nova Draft Button Loaded...');
+
   Vue.component('detail-nova-draft-button', DetailNovaDraftButton);
   Vue.component('form-nova-draft-button', FormNovaDraftButton);
 
