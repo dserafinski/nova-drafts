@@ -2,19 +2,19 @@ export default {
   methods: {
     getDetailDeleteButton() {
 
-      // console.log('Nova Draft Button Loaded: getDetailDeleteButton');
+      console.log('Nova Draft Button Loaded: getDetailDeleteButton');
       // console.log(document.querySelector('.content').querySelector('[dusk=open-delete-modal-button]'));
 
-      return document.querySelector('body').querySelector('[dusk=agreements-detail-component]');
+      return document.querySelector('[dusk=content]').querySelector('[dusk=edit-resource-button]');
     },
 
     getFormHeading() {
 
       console.log('Nova Draft Button Loaded: getFormHeading');
-      console.log(document.querySelector('form > * > h1'));
+
 
       // return document.querySelector('form > * > h1');
-      return document.querySelector('body').querySelector('[dusk=agreements-detail-component]');
+      return document.querySelector('[dusk=content]').querySelector('* > h1');
     },
   },
 };

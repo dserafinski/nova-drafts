@@ -29,10 +29,13 @@ export default {
   },
 
   mounted() {
-    // if (!this.field.value) {
-    //   const editButtonEl = document.querySelector('.content').querySelector('[dusk="edit-resource-button"]');
-    //   editButtonEl.parentNode.append(this.$refs.publishButton.$el);
-    // }
+
+    console.log('mounted', this.field.value, this.field.childDraft, this.field.draftParent);
+
+    if (!this.field.value) {
+      const editButtonEl = document.querySelector('[dusk=content]').querySelector('[dusk=edit-resource-button]');
+      editButtonEl.parentNode.append(this.$refs.publishButton.$el);
+    }
   },
 };
 </script>

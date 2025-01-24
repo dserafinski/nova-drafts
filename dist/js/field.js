@@ -19954,13 +19954,13 @@ __webpack_require__.r(__webpack_exports__);
   mixins: [laravel_nova__WEBPACK_IMPORTED_MODULE_0__.Deletable, laravel_nova__WEBPACK_IMPORTED_MODULE_0__.InteractsWithResourceInformation, _mixins_FindsNovaElements__WEBPACK_IMPORTED_MODULE_1__["default"]],
   props: ['resource', 'resourceId', 'field', 'resourceName'],
   mounted: function mounted() {
-    // if (this.isDraft) {
-    //   const deleteButton = this.getDetailDeleteButton();
-    //   if (deleteButton) {
-    //     deleteButton.style.display = 'none';
-    //     deleteButton.parentNode.insertBefore(this.$refs.deleteNovaDraftButton, deleteButton);
-    //   }
-    // }
+    if (this.isDraft) {
+      var deleteButton = this.getDetailDeleteButton();
+      if (deleteButton) {
+        deleteButton.style.display = 'none';
+        deleteButton.parentNode.insertBefore(this.$refs.deleteNovaDraftButton, deleteButton);
+      }
+    }
   },
   beforeMount: function beforeMount() {
     if (this.field.childDraft && this.field.childDraft.id) {
@@ -20080,10 +20080,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    // if (!this.field.value) {
-    //   const editButtonEl = document.querySelector('.content').querySelector('[dusk="edit-resource-button"]');
-    //   editButtonEl.parentNode.append(this.$refs.publishButton.$el);
-    // }
+    console.log('mounted', this.field.value, this.field.childDraft, this.field.draftParent);
+    if (!this.field.value) {
+      var editButtonEl = document.querySelector('[dusk=content]').querySelector('[dusk=edit-resource-button]');
+      editButtonEl.parentNode.append(this.$refs.publishButton.$el);
+    }
   }
 });
 
@@ -20564,17 +20565,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     getDetailDeleteButton: function getDetailDeleteButton() {
-      // console.log('Nova Draft Button Loaded: getDetailDeleteButton');
+      console.log('Nova Draft Button Loaded: getDetailDeleteButton');
       // console.log(document.querySelector('.content').querySelector('[dusk=open-delete-modal-button]'));
 
-      return document.querySelector('body').querySelector('[dusk=agreements-detail-component]');
+      return document.querySelector('[dusk=content]').querySelector('[dusk=edit-resource-button]');
     },
     getFormHeading: function getFormHeading() {
       console.log('Nova Draft Button Loaded: getFormHeading');
-      console.log(document.querySelector('form > * > h1'));
 
       // return document.querySelector('form > * > h1');
-      return document.querySelector('body').querySelector('[dusk=agreements-detail-component]');
+      return document.querySelector('[dusk=content]').querySelector('* > h1');
     }
   }
 });
