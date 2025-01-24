@@ -2,7 +2,6 @@
 
   <button
     v-if="field.isUnpublishable"
-    ref="unpublishButton"
     type="button"
     class="mr-3 btn btn-default btn-danger"
     @click="unpublish"

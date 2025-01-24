@@ -20515,13 +20515,12 @@ __webpack_require__.r(__webpack_exports__);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return $props.field.isUnpublishable ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 0,
-    ref: "unpublishButton",
     type: "button",
     "class": "mr-3 btn btn-default btn-danger",
     onClick: _cache[0] || (_cache[0] = function () {
       return _ctx.unpublish && _ctx.unpublish.apply(_ctx, arguments);
     })
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('novaDrafts.unpublishButtonText')), 513 /* TEXT, NEED_PATCH */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('novaDrafts.unpublishButtonText')), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),
@@ -20608,21 +20607,31 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
           while (1) switch (_context.prev = _context.next) {
             case 0:
               _context.prev = 0;
-              _context.next = 8;
-              break;
+              _context.next = 3;
+              return Nova.request().post("/nova-vendor/nova-drafts/draft-unpublish/".concat(_this.resourceId), {
+                "class": _this.field["class"]
+              });
             case 3:
-              _context.prev = 3;
+              // Reload page
+              _this.$router.go(null);
+              _this.$toasted.show(_this.__('novaDrafts.unpublishSuccessToast'), {
+                type: 'success'
+              });
+              _context.next = 12;
+              break;
+            case 7:
+              _context.prev = 7;
               _context.t0 = _context["catch"](0);
               console.error(_context.t0);
               _this.$toasted.show(_this.__('novaDrafts.unpublishFailedToast'), {
                 type: 'error'
               });
               return _context.abrupt("return");
-            case 8:
+            case 12:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[0, 3]]);
+        }, _callee, null, [[0, 7]]);
       }))();
     }
   }
