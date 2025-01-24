@@ -20613,8 +20613,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
               });
             case 3:
               // Reload page
-              _this.$router.go(null);
-              _this.$toasted.show(_this.__('novaDrafts.unpublishSuccessToast'), {
+              // Nova.$router.go(null);
+              // Nova.visit(Nova.urlFor('resources.index', { resource: this.resourceName }));
+              Nova.visit("/resources/".concat(_this.resourceName, "/").concat(_this.resourceId));
+              Nova.$toasted.show(_this.__('novaDrafts.unpublishSuccessToast'), {
                 type: 'success'
               });
               _context.next = 12;
@@ -20623,7 +20625,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
               _context.prev = 7;
               _context.t0 = _context["catch"](0);
               console.error(_context.t0);
-              _this.$toasted.show(_this.__('novaDrafts.unpublishFailedToast'), {
+              Nova.$toasted.show(_this.__('novaDrafts.unpublishFailedToast'), {
                 type: 'error'
               });
               return _context.abrupt("return");

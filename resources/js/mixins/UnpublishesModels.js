@@ -1,17 +1,23 @@
 export default {
   methods: {
     async unpublish() {
+      // console.log('Unpublishing model');
+      // console.log(this)
+      // console.log(Nova)
+
       try {
         await Nova.request().post(`/nova-vendor/nova-drafts/draft-unpublish/${this.resourceId}`, {
           class: this.field.class,
         });
 
         // Reload page
-        this.$router.go(null);
-        this.$toasted.show(this.__('novaDrafts.unpublishSuccessToast'), { type: 'success' });
+        // Nova.$router.go(null);
+        // Nova.visit(Nova.urlFor('resources.index', { resource: this.resourceName }));
+        Nova.visit(`/resources/${this.resourceName}/${this.resourceId}`);
+        Nova.$toasted.show(this.__('novaDrafts.unpublishSuccessToast'), { type: 'success' });
       } catch (e) {
         console.error(e);
-        this.$toasted.show(this.__('novaDrafts.unpublishFailedToast'), { type: 'error' });
+        Nova.$toasted.show(this.__('novaDrafts.unpublishFailedToast'), { type: 'error' });
         return;
       }
     },
