@@ -42,7 +42,7 @@ class CreateDraftsMigration extends Command
 
     public function getTables()
     {
-        return DB::getDoctrineSchemaManager()->listTableNames();
+        return DB::connection()->getSchemaBuilder()->getTables();
     }
 
     /**
