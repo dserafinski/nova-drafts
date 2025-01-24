@@ -20371,8 +20371,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  slot: "value"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <panel-item :field=\"field\">\n    <template slot=\"value\">\n      <publish-indicator :draft=\"isDraft\" :published=\"field.value\" />\n      <publish-button :draftId=\"draftId\" :resourceClass=\"field.class\" ref=\"publishButton\" v-if=\"!field.value\" />\n    </template>\n  </panel-item> "), _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "nova-published-field/DetailButton.vue", -1 /* HOISTED */))], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
+  var _component_publish_indicator = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("publish-indicator");
+  var _component_publish_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("publish-button");
+  var _component_panel_item = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("panel-item");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_panel_item, {
+    field: $props.field
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("template", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_publish_indicator, {
+        draft: $options.isDraft,
+        published: $props.field.value
+      }, null, 8 /* PROPS */, ["draft", "published"]), !$props.field.value ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_publish_button, {
+        key: 0,
+        draftId: $data.draftId,
+        resourceClass: $props.field["class"]
+      }, null, 8 /* PROPS */, ["draftId", "resourceClass"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
+    }),
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["field"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span>nova-published-field/DetailButton.vue</span> ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
 }
 
 /***/ }),
